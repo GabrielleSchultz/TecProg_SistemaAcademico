@@ -19,13 +19,13 @@ public:
 	Notas(int num_faltas = 0, float n_p1 = 0.0, float n_p2 = 0.0, float n_final = 0.0, Aluno* aluno = NULL);
 	~Notas();
 	void set_primeira_nota(float n1);
-	float get_primeira_nota();
+	const float get_primeira_nota();
 	void set_segunda_nota(float n2);
-	float get_segunda_nota();
+	const float get_segunda_nota();
 	void set_nota_final(float n_final);
-	float get_nota_final();
+	const float get_nota_final();
 	void set_faltas(int n_faltas);
-	int get_faltas();
+	const int get_faltas();
 	void set_aluno(Aluno* aluno);
 };
 

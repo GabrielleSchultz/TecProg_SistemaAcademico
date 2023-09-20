@@ -100,6 +100,8 @@ void Principal::inicializaProfessores()
 	L_Professores.inclue_professor(&Simao);
 	L_Professores.inclue_professor(&Dorini);
 
+	L_Pessoas.inclue_prof (&Simao);
+	L_Pessoas.inclue_prof (&Dorini);
 }
 
 void Principal::inicializaAlunos()
@@ -115,13 +117,20 @@ void Principal::inicializaAlunos()
 
 	L_Alunos.inclue_aluno(&Gabi);
 	L_Alunos.inclue_aluno(&Michat);
+
+	L_Pessoas.inclue_aluno(&Gabi);
+	L_Pessoas.inclue_aluno(&Michat);
 }
+
+
 
 void Principal::inicializaUniversidades()
 {
 	Cambridge.set_univ_name("Universidade de Cambridge");
 	Princeton.set_univ_name("Universidade de Princeton");
+
 	UTFPR.set_univ_name("Universidade Tecnologica Federal do Parana");
+	UTFPR.set_univ_nickname("UTFPR");
 
 	L_Universidades.inclue_universidade(&UTFPR);
 	L_Universidades.inclue_universidade(&Cambridge);
@@ -133,8 +142,8 @@ void Principal::inicializaDepartamentos()
 {
 	Princeton_Physics.set_dpto_name("Departamento de Fisica de Princeton");
 	Cambridge_Math.set_dpto_name("Departamento de Matematica de Cambridge");
-	UTFPR_DAINF.set_dpto_name("Departamento de Informatica - DAINF");
-	UTFPR_DAMAT.set_dpto_name("Departamento de Matematica - DAMAT");
+	UTFPR_DAINF.set_dpto_name("DAINF");
+	UTFPR_DAMAT.set_dpto_name("DAMAT");
 
 	//associaçao departamento - universidade 
 	Princeton.set_departamento(&Princeton_Physics);
@@ -176,6 +185,10 @@ void Principal::Executar()
 	Menu();
 }
 
+
+//- funções de debug -
+
+/* ---
 void Principal::calculaIdadeProf()
 {
 	Einstein.calcula_idade(dia_atual, mes_atual, ano_atual);
@@ -248,6 +261,8 @@ void Principal::listaAlunosDisciplinas() {
 
 	TecProg_UTF2023.lista_alunos();
 }
+---
+*/
 
 
 //implementação do menu:
@@ -411,7 +426,7 @@ void Principal::MenuExe()
 {
 	int option = -1;
 
-	while (option != 6)
+	while (option != 7)
 	{
 		system("cls");
 		system("color 0E");
@@ -428,7 +443,8 @@ void Principal::MenuExe()
 		cout << "3 - Listar Disciplinas" << endl;
 		cout << "4 - Listar Departamentos" << endl;
 		cout << "5 - Listar Universidades" << endl;
-		cout << "6 - Voltar\n" << endl;
+		cout << "6 - Listar Pessoas" << endl;
+		cout << "7 - Voltar\n" << endl;
 
 		cout.width(40);
 		cout.fill('-');
@@ -533,6 +549,19 @@ void Principal::MenuExe()
 			} break;
 
 			case 6:
+			{
+				system("cls");
+				cout << " -- Pessoas:\n" << endl;
+				cout << L_Pessoas.get_num_pessoas() << " pessoas cadastradas no sistema.\n" << endl;
+				cout << "--Lista de Universidades cadastradas : " << endl;
+				L_Pessoas.imprime_pessoas();
+				cout << "\nPressione qualquer tecla para voltar" << endl;
+				cin >> ws;
+				getchar();
+
+			} break;
+
+			case 7:
 			{
 				system("cls");
 				getchar();
@@ -859,6 +888,7 @@ void Principal::CadAluno()
 
 		p_aluno->set_static_value(0);
 		L_Alunos.inclue_aluno(p_aluno);
+		L_Pessoas.inclue_aluno(p_aluno);
 
 		cout << "\nAluno cadastrado com sucesso.\n" << endl;
 		system("Pause");
@@ -933,6 +963,7 @@ void Principal::CadProfessor()
 
 			p_prof->set_static_value(0);
 			L_Professores.inclue_professor(p_prof);
+			L_Pessoas.inclue_prof(p_prof);
 
 			cout << "\nProfessor cadastrado com sucesso.\n" << endl;
 			system("Pause");

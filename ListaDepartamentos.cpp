@@ -104,6 +104,7 @@ void ListaDepartamento::recuperar_dptos()
 		dpto_recuperado->set_static_value(0);
 		inclue_departamento(dpto_recuperado);
 	}
+	recuperador_dptos.close();
 }
 
 void ListaDepartamento::limpa_lista()

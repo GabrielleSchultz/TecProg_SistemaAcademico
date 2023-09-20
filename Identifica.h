@@ -11,7 +11,7 @@ public:
 	~Identificador();
 
 	void set_id(int ID) { id = ID; };
-	int get_id() { return id; };
+	const int get_id() { return id; };
 	int static_verify();
 	void set_static_value(int value);
 };

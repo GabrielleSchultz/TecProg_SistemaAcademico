@@ -38,7 +38,7 @@ void Aluno::set_RA(int registro_academico)
 		cout << "ERRO: RA invalido atribuido a " << nome_pessoa << endl;
 }
 
-int Aluno::get_RA()
+const int Aluno::get_RA()
 {
 	return RA;
 }

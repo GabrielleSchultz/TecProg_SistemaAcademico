@@ -37,7 +37,7 @@ Universidade* ListaUniversidade::localizar(string nome_univ)
 	while (percorre != NULL)
 	{
 		p_univ = percorre->get_referencia();
-		if (p_univ->get_univ_name() == nome_univ)
+		if (p_univ->get_univ_name() == nome_univ || p_univ->get_univ_nickname() == nome_univ)
 			return percorre->get_referencia();	//p_univ
 
 		percorre = percorre->get_proximo();
@@ -63,7 +63,7 @@ void ListaUniversidade::gravar_universidades()
 	if (!gravador_universidades)
 	{
 		cerr << "Erro: nao foi possivel abrir arquivo de gravacao (universidades)";
-		fflush(stdin);
+		cin >> ws;
 		getchar();
 	}
 

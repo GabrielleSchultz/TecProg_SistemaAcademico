@@ -15,5 +15,5 @@ public:
 	Aluno(int dia_nasc, int mes_nasc, int ano_nasc, string nome);
 	void onde_estuda();
 	void set_RA(int registro_academico);
-	int get_RA();
+	const int get_RA();
 };

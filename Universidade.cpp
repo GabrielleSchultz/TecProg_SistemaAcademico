@@ -20,9 +20,19 @@ void Universidade::set_univ_name(string nome)
 	nome_univ = nome;
 }
 
-string Universidade::get_univ_name()
+void Universidade::set_univ_nickname(string nickname)
+{
+	sigla = nickname;
+}
+
+const string Universidade::get_univ_name()
 {
 	return nome_univ;
+}
+
+const string Universidade::get_univ_nickname()
+{
+	return sigla;
 }
 
 

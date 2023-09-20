@@ -25,3 +25,4 @@ public:
 	Departamento* get_dpto_filiado();
 };
 
+//ps: os gets de Academico nao sao constantes para serem gravados nos arquivos.dat

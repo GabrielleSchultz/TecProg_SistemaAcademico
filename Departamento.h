@@ -21,7 +21,8 @@ public:
 	string get_dpto_name ();
 
 	void set_univ(Universidade* univ);
-	void set_subject(Disciplina* p_disciplina);
+	Universidade* get_univ_associada();
 
+	void set_subject(Disciplina* p_disciplina);
 	void imprime_disciplinas_first_to_last();
 };

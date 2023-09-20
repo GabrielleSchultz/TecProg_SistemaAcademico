@@ -3,6 +3,7 @@
 #include "Professor.h"
 #include "Aluno.h"
 
+#include "ListaPessoas.h"
 #include "ListaAlunos.h"
 #include "ListaDepartamentos.h"
 #include "ListaDisciplinas.h"
@@ -56,6 +57,7 @@ private:
 	ListaUniversidade L_Universidades;
 	ListaAlunos L_Alunos;
 	ListaProfessor L_Professores;
+	ListaPessoas L_Pessoas;
 
 	//data:
 	int mes_atual;
